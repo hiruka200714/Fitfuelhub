@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitFuel Hub — Dynamic Demo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a class="logo" href="#">FIT<span>FUEL</span> HUB</a>
+  <nav>
+    <a href="#shop">Shop</a><a href="#meals">Meals</a><a href="#coaching">Coaching</a><a href="#about">About</a>
+  </nav>
+  <button class="cartBtn" onclick="openCart()">🛒 Cart <b id="cartCount">0</b></button>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <small>FUELING STRONG LIVES • SRI LANKA</small>
+    <h1>Fuel your body.<br><em>Power your life.</em></h1>
+    <p>Supplements, protein snacks, healthy meals, smoothies and personalized nutrition guidance in one hub.</p>
+    <a class="primary" href="#shop">Shop now</a>
+    <a class="secondary" href="#coaching">Get a meal plan</a>
+  </div>
+</section>
+
+<section id="shop">
+  <div class="heading"><div><small>ONLINE STORE</small><h2>Shop FitFuel</h2></div><input id="search" oninput="renderProducts()" placeholder="Search products..."></div>
+  <div class="filters" id="filters"></div>
+  <div class="products" id="products"></div>
+</section>
+
+<section id="meals">
+  <div class="heading"><div><small>HEALTHY FOOD</small><h2>Meals & Drinks</h2></div></div>
+  <div class="products" id="mealsGrid"></div>
+</section>
+
+<section id="coaching" class="coaching">
+  <div>
+    <small>PERSONALIZED NUTRITION</small>
+    <h2>Build a plan around your goal.</h2>
+    <p>Choose your goal and lifestyle to receive a starting recommendation.</p>
+  </div>
+  <div class="panel">
+    <label>Goal</label><select id="goal"><option>Muscle building</option><option>Sports performance</option><option>Healthy lifestyle</option><option>Convenient healthy eating</option></select>
+    <label>Lifestyle</label><select id="life"><option>Active / fitness-focused</option><option>Busy professional</option><option>Athlete</option><option>General wellness</option></select>
+    <button class="primary full" onclick="recommend()">Get recommendation</button>
+    <p id="recommendation"></p>
+  </div>
+</section>
+
+<section id="about">
+  <small>ABOUT FITFUEL HUB</small><h2>One hub for better nutrition.</h2>
+  <div class="three">
+    <article><b>💪 Quality Nutrition</b><p>Sports supplements, protein products and wholesome food solutions.</p></article>
+    <article><b>🧑‍🏫 Expert Guidance</b><p>Nutrition advice and personalized meal plans.</p></article>
+    <article><b>🚚 Convenience</b><p>Online ordering, healthy meals and ready-to-drink options.</p></article>
+  </div>
+</section>
+
+<section class="offer"><div><small>NEW CUSTOMER OFFER</small><h2>10% OFF your first order</h2><p>Use <b>FUELUP10</b> at checkout.</p></div><a class="secondary dark" href="#shop">Start shopping →</a></section>
+</main>
+
+<footer><b>FIT<span>FUEL</span> HUB</b><p>Fueling Strong Lives • © 2026</p></footer>
+
+<div id="modal" class="modal" onclick="if(event.target===this)closeCart()">
+ <div class="modalBox"><button class="x" onclick="closeCart()">×</button><h2>Your Cart</h2><div id="cartItems"></div><div class="total" id="total"></div><button class="primary full" onclick="checkout()">Checkout</button></div>
+</div>
+<script src="app.js"></script>
+</body></html>
